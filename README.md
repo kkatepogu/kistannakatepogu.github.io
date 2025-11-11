@@ -1,2 +1,10 @@
 # kistannakatepogu.github.io
-About my self 
+As a Technical Lead/Technical Specialist, I bring 17 years of extensive experience in software analysis, design, and development. My expertise lies in architecting web and desktop applications using Microsoft Technologies and knowledge on Artificial Intelligence to provide innovative solutions across various sectors. These include Insurance (Chubb, Cigna and HCSC), Building Management Systems (Carrier), Travel and Vacation, Health Care, and Tracking Systems (using RFID Technology). I am proficient in cloud platforms like Azure and AWS and have enhanced my technical and leadership skills through numerous software architecture and decision-making courses.
+
+In my career, I have successfully designed and integrated complex systems including orchestration middleware software, platform service applications, gateways, driver components, Windows services, and both web and desktop applications using a mix of cloud-based and on-premise technologies. My technical versatility is demonstrated through my work on various Web/SOA applications using technologies like ASP.NET, ASP.NET MVC, ASP.NET Web API, .NET Core, C#, VB.NET, WCF, JavaScript, jQuery, Angular, Python, Kafka/ActiveMQ, Azure, Azure AI Services, and AWS Cloud Services.
+
+I have relevant Generative AI experience with various LLM models/frameworks like OpenAI, Llama, PaLM, Hugging Face, PhiData, GroqCloud, and LangChain using Python/C#. I have a solid grasp of concepts like GANs, VAEs, and prompt engineering and have explored advanced topics such as LLM application development, RAG, CAG, and fine-tuning. Additionally, I have good exposure and knowledge to build AI-based applications/agents using Gen AI and LLMs.
+
+I am deeply passionate about continuous learning and staying abreast of the latest trends and best practices in cloud and web development. My specializations include Microservices and Monolithic architecture styles, various design patterns, and deploying generative AI techniques in real-world scenarios. 
+
+My commitment to innovation and excellence drives me to deliver high-quality solutions that meet and exceed client expectations.
