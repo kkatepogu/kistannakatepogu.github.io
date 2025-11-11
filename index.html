@@ -1,218 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kistanna Katepogu — Profile</title>
-  <meta name="description" content="Kistanna Katepogu — Senior .NET & Generative AI Engineer. 17+ years building enterprise web, cloud, and AI systems." />
-  <meta property="og:title" content="Kistanna Katepogu — Profile" />
-  <meta property="og:description" content="Senior .NET & Generative AI Engineer. Building enterprise web, cloud, and AI systems." />
-  <meta property="og:type" content="website" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kistanna Katepogu — Senior .NET & Generative AI Engineer</title>
+  <meta name="description" content="Senior .NET & Generative AI Engineer in Edison, New Jersey. 17+ years building enterprise web, cloud, and AI systems.">
+  <meta property="og:title" content="Kistanna Katepogu — Senior .NET & Generative AI Engineer">
+  <meta property="og:description" content="Edison, New Jersey · ASP.NET Core · Azure/AWS · Azure OpenAI · LangChain · RAG · Microservices · Kafka">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#003366">
   <style>
     :root{
-      --accent:#ff7a00;        /* orange */
-      --primary:#0f2a53;       /* deep blue */
-      --muted:#6b7a90;
-      --bg:#f7f9fc;
+      --blue:#003366;      /* primary blue */
+      --orange:#ff7a00;    /* accent orange */
+      --white:#ffffff;
+      --ink:#213547;
+      --muted:#5b6b7c;
+      --soft:#f5f8ff;
       --card:#ffffff;
-      --ring: rgba(15,42,83,0.15);
+      --ring:rgba(0,51,102,.15);
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--primary);background:var(--bg);}
-    a{color:var(--accent);text-decoration:none}
+    html,body{margin:0;padding:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;}
+    body{color:var(--ink);background:var(--white)}
+    a{color:var(--orange);text-decoration:none}
     a:hover{text-decoration:underline}
-    .container{max-width:1080px;margin:0 auto;padding:24px}
+    .container{max-width:1120px;margin:0 auto;padding:24px}
+    /* Top bar */
+    .top{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid #e7ebf3}
+    .nav{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;letter-spacing:.2px;color:var(--blue)}
+    .quick a{font-weight:600;padding:10px 12px;border-radius:10px}
+    .quick a.primary{background:var(--orange);color:var(--white)}
+    /* Hero */
     header.hero{
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(255,122,0,0.15), transparent),
-                  radial-gradient(1200px 600px at 110% 10%, rgba(15,42,83,0.10), transparent),
-                  linear-gradient(180deg, #fff, #f8fbff 55%, #f5f8fd);
-      border-bottom:1px solid #eaeef5;
+      background: radial-gradient(900px 500px at 5% -10%, rgba(255,122,0,.12), transparent),
+                  radial-gradient(900px 500px at 110% 10%, rgba(0,51,102,.10), transparent),
+                  linear-gradient(180deg, var(--white), var(--soft));
+      border-bottom:1px solid #e7ebf3;
     }
-    .hero-inner{display:grid;grid-template-columns:1.2fr 0.8fr;gap:28px;align-items:center;padding:56px 0}
-    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid #eaeef5;box-shadow:0 0 0 6px var(--ring);font-size:12px;color:var(--muted)}
-    h1{font-size:40px;line-height:1.1;margin:14px 0 10px}
-    .subtitle{font-size:18px;color:var(--muted);max-width:60ch}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center;padding:54px 0}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:var(--white);border:1px solid #e7ebf3;box-shadow:0 0 0 6px var(--ring);font-size:12px;color:var(--muted)}
+    h1{font-size:42px;line-height:1.1;margin:10px 0 8px;color:var(--blue)}
+    .subtitle{font-size:18px;color:var(--muted);max-width:65ch}
+    .location{margin-top:8px;font-weight:700;color:var(--orange)}
     .cta{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid #e1e7f0;background:var(--card);box-shadow:0 6px 16px rgba(15,42,83,0.06);font-weight:600}
-    .btn.primary{background:var(--accent);border-color:transparent;color:#fff}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid #e1e7f0;background:var(--card);box-shadow:0 6px 16px rgba(0,0,0,.05);font-weight:700}
+    .btn.primary{background:var(--orange);border-color:transparent;color:#fff}
     .btn svg{width:18px;height:18px;flex:0 0 auto}
-    .card{background:var(--card);border:1px solid #e1e7f0;border-radius:16px;box-shadow:0 6px 18px rgba(15,42,83,0.05);padding:22px}
-    section{padding:24px 0}
-    h2{font-size:24px;margin:0 0 14px}
+    .card{background:var(--card);border:1px solid #e7ebf3;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,.05);padding:20px}
+    section{padding:26px 0}
+    h2{font-size:24px;margin:0 0 12px;color:var(--blue)}
     .grid{display:grid;gap:16px}
     .grid-2{grid-template-columns:1fr 1fr}
-    .kvs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#f9fbff;border:1px solid #e7ebf3;font-size:12px;color:#294261}
+    .list{margin:0;padding:0 0 0 18px;color:#2c3b52}
+    .li-tight li{margin:6px 0}
+    .kvs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
     .kv{padding:12px 14px;border-radius:12px;background:#fff;border:1px dashed #e3eaf3}
-    .list{margin:0;padding:0 0 0 18px;color:#2b3b59}
-    .tag{display:inline-block;padding:6px 10px;margin:6px 6px 0 0;border-radius:999px;background:#fff;border:1px solid #e1e7f0;font-size:12px;color:#30466a}
     .timeline{position:relative;margin-left:6px}
-    .t-item{padding-left:18px;margin:0 0 18px;position:relative}
-    .t-item::before{content:"";position:absolute;left:0;top:6px;width:10px;height:10px;background:var(--accent);border-radius:50%}
+    .t-item{padding-left:18px;margin:0 0 16px;position:relative}
+    .t-item::before{content:"";position:absolute;left:0;top:6px;width:10px;height:10px;background:var(--orange);border-radius:50%}
     .t-item small{color:var(--muted)}
-    footer{padding:32px 0 56px;color:var(--muted);text-align:center}
-    .split{display:grid;grid-template-columns:1.2fr 0.8fr;gap:16px}
-    .skills{display:flex;flex-wrap:wrap}
-    @media (max-width: 900px){
-      .hero-inner,.grid-2,.split{grid-template-columns:1fr}
+    .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+    .foot{padding:36px 0 60px;color:var(--muted);text-align:center;border-top:1px solid #e7ebf3;background:#f8fbff}
+    @media (max-width: 980px){
+      .hero-grid,.grid-2,.cols{grid-template-columns:1fr}
       .kvs{grid-template-columns:1fr}
     }
-    /* print friendly */
-    @media print {.btn,.cta{display:none} header.hero{box-shadow:none} .card{box-shadow:none}}
+    @media print {.btn,.cta,.top{display:none} header.hero{box-shadow:none} .card{box-shadow:none}}
   </style>
 </head>
 <body>
+  <!-- Top -->
+  <div class="top">
+    <div class="container nav">
+      <div class="logo"> <h1>KISTANNA&nbsp;KATEPOGU</h1></div>
+      <div class="quick">
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="primary">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
   <header class="hero">
-    <div class="container hero-inner">
+    <div class="container hero-grid">
       <div>
         <span class="badge">Senior .NET & Generative AI Engineer</span>
-        <h1>Kistanna Katepogu</h1>
+        <h1>Delivering reliable <span style="color:var(--orange)">enterprise software</span> & <span style="color:var(--orange)">AI solutions</span></h1>
         <p class="subtitle">
-          17+ years designing and delivering enterprise-grade web, cloud, and AI systems across Insurance, BMS, Healthcare, Travel, and Tracking.
-          Specialized in Azure/AWS, C#/.NET, and building agentic RAG solutions with Azure OpenAI & LangChain.
+          17+ years building web, cloud, and AI systems across Insurance, BMS, Healthcare, Travel, and Tracking.
+          Specialized in C#/.NET, Azure/AWS, and agentic RAG with Azure OpenAI & LangChain.
         </p>
+        <div class="location">📍 Edison, New Jersey, USA</div>
         <div class="cta">
           <a class="btn primary" href="mailto:kkatepogu2031@gmail.com">
-            <!-- mail icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
-            Email Me
-          </a>
-          <a class="btn" href="https://www.linkedin.com/in/kistanna-katepogu/" target="_blank" rel="noopener">
-            <!-- in icon -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.06c.67-1.2 2.32-2.46 4.78-2.46 5.12 0 6.06 3.37 6.06 7.76V24h-5V16.5c0-1.79-.03-4.09-2.49-4.09-2.49 0-2.87 1.95-2.87 3.96V24h-5V8z"/></svg>
-            LinkedIn
-          </a>
-          <a class="btn" href="https://github.com/kkatepogu" target="_blank" rel="noopener">
-            <!-- github icon -->
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.2 3.4 9.6 8.1 11.2.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.5-1.8-1.5-1.8-1.2-.9.1-.9.1-.9 1.3.1 2 .9 2 .9 1.1 2 3 1.4 3.8 1.1.1-.8.4-1.4.7-1.7-2.7-.3-5.6-1.4-5.6-6.2 0-1.4.5-2.5 1.2-3.4-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.3a11.5 11.5 0 0 1 6.2 0c2.4-1.6 3.4-1.3 3.4-1.3.6 1.6.2 2.9.1 3.2.8.9 1.2 2 1.2 3.4 0 4.8-2.8 5.9-5.6 6.2.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.6a11.6 11.6 0 0 0 8.1-11.2A11.5 11.5 0 0 0 12 .5z"/></svg>
-            GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg>
+            Email
           </a>
           <a class="btn" href="tel:+17324334307">
-            <!-- phone icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.15 9.81a19.86 19.86 0 0 1-3.07-8.63A2 2 0 0 1 2.06-.99h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.1 7.1a16 16 0 0 0 6.8 6.8l.45-.2a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            +1 (732) 433-4307
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.15 9.81a19.86 19.86 0 0 1-3.07-8.63A2 2 0 0 1 2.06-.99h3a2 2 0 0 1 2 1.72 12.8 12.8 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L6.1 7.1a16 16 0 0 0 6.8 6.8l.45-.2a2 2 0 0 1 2.11-.45 12.8 12.8 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call
           </a>
+          <a class="btn" href="https://www.linkedin.com/in/kistanna-katepogu/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/kkatepogu" target="_blank" rel="noopener">GitHub</a>
+		  <a class="btn" href="https://medium.com/@katepogu" target="_blank" rel="noopener">Medium</a>
         </div>
       </div>
-      <div>
-        <div class="card">
-          <h2 style="margin-top:0">Snapshot</h2>
-          <div class="kvs">
-            <div class="kv"><strong>Cloud</strong><br/>Azure, AWS</div>
-            <div class="kv"><strong>AI</strong><br/>Azure OpenAI, LangChain, RAG</div>
-            <div class="kv"><strong>.NET</strong><br/>C#, ASP.NET Core</div>
-          </div>
-          <div class="skills" style="margin-top:10px">
-            <span class="tag">Microservices</span>
-            <span class="tag">Serverless</span>
-            <span class="tag">Kafka</span>
-            <span class="tag">WCF & Web API</span>
-            <span class="tag">SQL & NoSQL</span>
-            <span class="tag">CI/CD (GitHub Actions)</span>
-            <span class="tag">App Insights</span>
-            <span class="tag">OAuth2 / Azure AD</span>
-          </div>
+      <div class="card">
+        <h2 style="margin-top:0">Snapshot</h2>
+        <div class="kvs">
+          <div class="kv"><strong>Cloud</strong><br>Azure, AWS</div>
+          <div class="kv"><strong>AI</strong><br>Azure OpenAI, LangChain, RAG</div>
+          <div class="kv"><strong>.NET</strong><br>C#, ASP.NET Core</div>
+        </div>
+        <div class="skills" style="margin-top:10px">
+          <span class="tag">Microservices</span>
+          <span class="tag">Serverless</span>
+          <span class="tag">Kafka</span>
+          <span class="tag">Web API & WCF</span>
+          <span class="tag">SQL & NoSQL</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">OAuth2 / Azure AD</span>
+          <span class="tag">Observability</span>
         </div>
       </div>
     </div>
   </header>
 
   <main class="container">
-    <section class="grid grid-2">
-      <div class="card">
-        <h2>About</h2>
-        <p>
-          Competent in building scalable web and desktop solutions using ASP.NET Core, ASP.NET MVC, Web API, WCF, and Azure/AWS cloud services.
-          Hands-on with Generative AI: Azure OpenAI, LangChain, and agentic RAG patterns to augment enterprise workflows.
-          Comfortable across SQL & NoSQL (SQL Server, PostgreSQL, MongoDB, Cosmos DB, DynamoDB) and event-driven systems using Kafka & Azure Service Bus.
-        </p>
-        <p>
-          Strong presenter and collaborator; experienced across Agile delivery, CI/CD, testing, and code quality with SonarQube & unit testing.
-        </p>
-      </div>
-      <div class="card">
-        <h2>Core Competencies</h2>
-        <ul class="list">
-          <li>Enterprise .NET design with microservices & serverless on Azure/AWS</li>
-          <li>Agentic RAG, LLM-powered assistants, and document workflows</li>
-          <li>API-first development: REST (Web API, FastAPI), SOAP/WCF</li>
-          <li>Observability & quality: App Insights, CloudWatch, SonarQube</li>
-          <li>Secure auth: OAuth2, Azure AD, Microsoft Graph</li>
-        </ul>
-      </div>
-    </section>
-
+    <!-- Summary -->
     <section class="card">
-      <h2>Generative AI — Selected Highlights</h2>
-      <ul class="list">
-        <li>Built AI Agents with LangChain; applied RAG for accurate, context-grounded answers.</li>
-        <li>LLM-Powered Defect Resolution Assistant searching Jira/Outlook/Confluence to suggest prior fixes.</li>
-        <li>AI-Native Test Management to propose test cases from Jira stories.</li>
-        <li>Document processing pipelines on Azure OpenAI with evaluation and guardrails.</li>
-        <li>Deployed Python services on AWS Lambda & Azure Functions; integrated third-party APIs.</li>
+      <h2>Professional Summary</h2>
+      <ul class="list li-tight">
+        <li>Enterprise-grade solutions with ASP.NET Core, Web API, WCF, Blazor; deployments on Azure & AWS.</li>
+        <li>Agentic RAG assistants, document pipelines, and evaluation using Azure OpenAI + LangChain.</li>
+        <li>Event-driven designs with Kafka/Service Bus; secure auth via OAuth2 & Azure AD.</li>
+        <li>Hands-on with SQL Server, PostgreSQL, DynamoDB, Cosmos DB, MongoDB.</li>
+        <li>Agile delivery, clean architecture, testing, SonarQube, and GitHub Actions.</li>
       </ul>
     </section>
 
-    <section class="card">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="t-item">
-          <strong>Sr. Technical Lead Developer — Cigna (HCSC), via CGI</strong><br/>
-          <small>May 2024 – Present · NJ, USA</small>
-          <div>
-            RAG chatbot integrations with Azure AI Search; LLM assistants for defect resolution & test management; .NET Core microservices; Kafka; AWS Lambda; CI/CD with TFS & GitHub Actions.
-          </div>
-        </div>
-        <div class="t-item">
-          <strong>Technical Lead Developer — Chubb Insurance</strong><br/>
-          <small>Jan 2023 – Apr 2024</small>
-          <div>Azure Functions microservices, API gateway (Node.js), Kafka, architecture & diagrams, code reviews, and production support.</div>
-        </div>
-        <div class="t-item">
-          <strong>.NET Lead Engineer / Technical Specialist — UTC & Carrier</strong><br/>
-          <small>Dec 2014 – Dec 2022</small>
-          <div>Enterprise integrations across BMS (HVAC, Access, Video, Fire), Azure & AWS serverless, Graph API, SignalR/SSE, IoT event pipelines.</div>
-        </div>
-        <div class="t-item">
-          <strong>Sr. Software Engineer — Ardent Technologies</strong>
-          <small> · Aug 2012 – Nov 2014</small>
-        </div>
-        <div class="t-item">
-          <strong>Sr. Software Engineer — Technology Solution Partners</strong>
-          <small> · Mar 2008 – Jul 2012</small>
-        </div>
-      </div>
-    </section>
-
-    <section class="split">
+    <!-- Skills -->
+    <section id="skills" class="grid grid-2">
       <div class="card">
-        <h2>Technical Stack</h2>
-        <p><strong>.NET & Languages:</strong> C#, ASP.NET Core, Web API, WCF, Blazor, Python</p>
-        <p><strong>Cloud:</strong> Azure (Functions, App Service, Service Bus, Key Vault, App Insights, AI Search, OpenAI), AWS (Lambda, S3, DynamoDB, SQS/SNS, API Gateway)</p>
-        <p><strong>Data:</strong> SQL Server, PostgreSQL, MySQL, Cosmos DB, DynamoDB, MongoDB</p>
-        <p><strong>AI/ML:</strong> Azure OpenAI, LangChain, RAG, Transformers, scikit‑learn, PyTorch, TensorFlow</p>
-        <p><strong>DevOps & QA:</strong> GitHub Actions, Jenkins, TFS, SonarQube, Postman</p>
+        <h2>Core Skills</h2>
+        <ul class="list li-tight">
+          <li><strong>Languages/Frameworks:</strong> C#, ASP.NET Core, Web API, WCF, Python</li>
+          <li><strong>AI/ML:</strong> Azure OpenAI, LangChain, RAG, Transformers, scikit-learn</li>
+          <li><strong>Cloud:</strong> Azure Functions, App Service, AI Search, Key Vault · AWS Lambda, S3, DynamoDB</li>
+          <li><strong>Data:</strong> SQL Server, PostgreSQL, MySQL, Cosmos DB, DynamoDB, MongoDB</li>
+          <li><strong>Messaging:</strong> Kafka, Azure Service Bus, SQS/SNS</li>
+          <li><strong>DevOps/QA:</strong> GitHub Actions, Jenkins, TFS · Postman, SonarQube</li>
+        </ul>
       </div>
       <div class="card">
-        <h2>Education & Certifications</h2>
-        <ul class="list">
-          <li>MCA — Sri Krishnadevaraya PG Centre (2005)</li>
-          <li>Advanced Certification in Cloud Computing — IIT Guwahati (Edureka)</li>
-          <li>Applied Generative AI Specialization — Simplilearn (Purdue collaboration)</li>
+        <h2>Highlights</h2>
+        <ul class="list li-tight">
+          <li>Built LLM-powered Defect Resolution & Test Management assistants via RAG.</li>
+          <li>Designed microservices & serverless APIs for claims and BMS domains.</li>
+          <li>Integrated Graph API, OAuth2 flows; established monitoring with App Insights/CloudWatch.</li>
+          <li>Delivered architecture docs (C4/UML) and led agile ceremonies.</li>
         </ul>
       </div>
     </section>
 
-    <section class="card">
+    <!-- Experience -->
+    <section id="experience" class="card">
+      <h2>Experience (Condensed)</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <strong>Sr. Technical Lead Developer — Cigna (HCSC), via CGI</strong> · <small>May 2024 – Present · NJ, USA</small>
+          <div>RAG chatbot with Azure AI Search; .NET Core microservices; Kafka pipelines; AWS Lambda; CI/CD with TFS/GitHub Actions; migrations from .NET Framework to .NET 6/8.</div>
+        </div>
+        <div class="t-item">
+          <strong>Technical Lead Developer — Chubb Insurance</strong> · <small>Jan 2023 – Apr 2024</small>
+          <div>Azure Functions microservices for claims; API gateway (Node.js); Kafka messaging; architecture diagrams; reviews; production support.</div>
+        </div>
+        <div class="t-item">
+          <strong>.NET Lead Engineer / Technical Specialist — UTC & Carrier</strong> · <small>Dec 2014 – Dec 2022</small>
+          <div>Enterprise BMS/IoT integrations (HVAC, Access, Video); Azure/AWS serverless; Graph API; SignalR/SSE; data pipelines; dashboards; security & audits.</div>
+        </div>
+        <div class="t-item">
+          <strong>Sr. Software Engineer — Ardent Technologies</strong> · <small>Aug 2012 – Nov 2014</small>
+        </div>
+        <div class="t-item">
+          <strong>Sr. Software Engineer — Technology Solution Partners</strong> · <small>Mar 2008 – Jul 2012</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="grid grid-2">
+      <div class="card">
+        <h2>Selected Projects</h2>
+        <ul class="list li-tight">
+          <li><strong>LLM-Powered Defect Resolution Assistant:</strong> searches Jira/Outlook/Confluence to suggest prior fixes; Azure OpenAI + LangChain RAG.</li>
+          <li><strong>AI-Native Test Management:</strong> generates test cases from Jira stories; evaluation & guardrails.</li>
+          <li><strong>Document Processing Pipelines:</strong> OCR + semantic retrieval; Azure Functions; App Insights dashboards.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Domain Coverage</h2>
+        <ul class="list li-tight">
+          <li>Insurance — policy & claims (Chubb, Cigna)</li>
+          <li>Building Management Systems — HVAC/Access/Video/Fire</li>
+          <li>Healthcare, Travel, Tracking & RFID</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education & Certs / Tools -->
+    <section class="cols">
+      <div class="card">
+        <h2>Education</h2>
+        <ul class="list li-tight">
+          <li>MCA — Sri Krishnadevaraya PG Centre (2005)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Certifications</h2>
+        <ul class="list li-tight">
+          <li>Advanced Certification in Cloud Computing — IIT Guwahati (Edureka)</li>
+          <li>Applied Generative AI Specialization — Simplilearn</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Tooling</h2>
+        <div class="skills">
+          <span class="tag">VS 2022</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Jenkins</span>
+          <span class="tag">TFS</span>
+          <span class="tag">Postman</span>
+          <span class="tag">SonarQube</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Miro/Visio</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card">
       <h2>Contact</h2>
+      <p><strong>Location:</strong> Edison, New Jersey, USA</p>
       <p><strong>Email:</strong> <a href="mailto:kkatepogu2031@gmail.com">kkatepogu2031@gmail.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+17324334307">+1 (732) 433‑4307</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+17324334307">+1 (732) 433-4307</a></p>
       <p><strong>LinkedIn:</strong> <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/kistanna-katepogu/">linkedin.com/in/kistanna-katepogu</a></p>
       <p><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/kkatepogu">github.com/kkatepogu</a></p>
+	   <p><strong>Medium:</strong> <a target="_blank" rel="noopener" href="https://medium.com/@katepogu">Medium.com/kkatepogu</a></p>
+	  
     </section>
   </main>
 
-  <footer>
-    © <span id="year"></span> Kistanna Katepogu · Built with ♥ in Blue & Orange
+  <footer class="foot">
+    © <span id="year"></span> Kistanna Katepogu · Built in blue, white & orange
   </footer>
 
   <script>
